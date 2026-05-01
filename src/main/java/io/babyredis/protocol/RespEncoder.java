@@ -10,6 +10,12 @@ public class RespEncoder {
         return String.format(":%d\r\n", value);
     }
 
+    public static String encodeBulkString(String string ){
+        int length = string.length();
+
+        return String.format("$%d\r\n%s\r\n", length, string);
+    }
+
     public static String encodeArray(String... values){
         int items  = values.length;
 
@@ -21,12 +27,6 @@ public class RespEncoder {
         }
 
         return builder.toString();
-    }
-
-    public static String encodeBulkString(String string ){
-        int length = string.length();
-
-        return String.format("$%d\r\n%s\r\n", length, string);
     }
 
     public static String encodeError(String error){
