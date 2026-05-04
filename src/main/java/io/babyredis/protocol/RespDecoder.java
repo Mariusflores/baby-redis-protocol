@@ -1,11 +1,10 @@
 package io.babyredis.protocol;
 
-import io.babyredis.error.BabyRedisException;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
+
+import io.babyredis.error.BabyRedisException;
 
 public class RespDecoder {
 
